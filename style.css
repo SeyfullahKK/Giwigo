@@ -32,39 +32,6 @@ p, .label, .nav-right a, .contact-link {
     font-weight: 300;
 }
 
-.nav-left .logo {
-    font-weight: 500;
-}
-
-/* Custom Cursor */
-.cursor {
-    width: 8px;
-    height: 8px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-}
-
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9998;
-    transition: transform 0.6s ease;
-}
-
-.cursor-hover {
-    transform: scale(2);
-    background: transparent;
-    border: 1px solid var(--primary-color);
-}
-
 /* Navigation */
 .navbar {
     position: fixed;
@@ -82,20 +49,23 @@ p, .label, .nav-right a, .contact-link {
 }
 
 .nav-left .logo {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: var(--primary-color);
+    font-weight: 500;
 }
 
 .nav-right {
     display: flex;
     gap: 2rem;
+    margin-left: auto;
+    padding-right: calc((100% - 1400px) / 2);
 }
 
 .nav-right a {
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     transition: var(--transition);
 }
 
@@ -115,7 +85,7 @@ p, .label, .nav-right a, .contact-link {
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    padding-left: 2rem;
+    padding-left: 0;
     margin-bottom: 0.5rem;
 }
 
@@ -138,6 +108,8 @@ p, .label, .nav-right a, .contact-link {
     padding-bottom: 60px;
     max-width: 1400px;
     margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .works-grid {
@@ -149,7 +121,7 @@ p, .label, .nav-right a, .contact-link {
 .project-item {
     margin-bottom: 1rem;
     position: relative;
-    cursor: pointer;
+    cursor: default;
 }
 
 .project-image {
@@ -159,8 +131,8 @@ p, .label, .nav-right a, .contact-link {
     background: var(--hover-color);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     transition: var(--transition);
+    cursor: default;
 }
 
 .project-image iframe {
@@ -176,25 +148,30 @@ p, .label, .nav-right a, .contact-link {
 }
 
 .project-image:hover {
-    transform: scale(1.02);
+    transform: none;
 }
 
 .project-image:hover iframe {
-    transform: scale(1.02);
+    transform: none;
 }
 
 .project-info {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .project-info h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: calc(1.5rem * 0.7);
+    font-weight: 600;
     color: var(--secondary-color);
     transition: var(--transition);
+    cursor: default;
+}
+
+.project-info h2:hover {
+    color: var(--primary-color) !important;
 }
 
 .project-info p {
@@ -254,18 +231,19 @@ p, .label, .nav-right a, .contact-link {
     text-align: left;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 2rem;
+    padding-left: 0;
 }
 
 .contact-content h2 {
-    font-size: 3rem;
+    font-size: 4vw;
     margin-bottom: 2rem;
+    line-height: 1.2;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .contact-link {
@@ -290,8 +268,8 @@ footer {
     justify-content: flex-start;
     align-items: center;
     max-width: 1400px;
-    margin: 0;
-    padding: 0 2rem;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .footer-left p {
@@ -345,13 +323,47 @@ footer {
     }
 }
 
-/* Hover Animations */
-.project-item {
+/* Başlık stilleri */
+.project-info h2 {
+    font-size: calc(1.5rem * 0.7);
+    font-weight: 600;
+    color: var(--secondary-color);
     transition: var(--transition);
+    cursor: default;
 }
 
-.project-item:hover .project-image {
-    transform: scale(0.98);
+/* Başlık hover efekti */
+.project-info h2:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Diğer hover efektlerini kaldır */
+.project-item:hover .project-info h2,
+.project-image:hover + .project-info h2,
+.project-image:hover ~ .project-info h2,
+.project-item:hover h2,
+.project-image:hover ~ h2,
+.project-item:hover .project-info h2,
+.project-image:hover + .project-info h2,
+.project-item:hover .project-info h2,
+.project-image:hover ~ .project-info h2,
+.project-item:hover .project-info h2,
+.project-image:hover + .project-info h2,
+.project-item:hover h2,
+.project-image:hover ~ h2,
+.project-item:hover .project-info h2,
+.project-image:hover + .project-info h2,
+.project-item:hover .project-info h2,
+.project-image:hover ~ .project-info h2 {
+    color: var(--secondary-color);
+}
+
+.project-item:hover .project-info h2 {
+    color: var(--secondary-color);
+}
+
+.project-image:hover + .project-info h2 {
+    color: var(--secondary-color);
 }
 
 /* Smooth Scrolling */
@@ -361,8 +373,8 @@ html {
 
 /* Video hover efekti için */
 .project-item:hover .project-image iframe {
-    transform: scale(1.02);
-    transition: var(--transition);
+    transform: none;
+    transition: none;
 }
 
 .project-item:hover .cursor,
@@ -371,7 +383,11 @@ html {
 }
 
 .project-item:hover .project-info h2 {
-    color: var(--primary-color);
+    color: inherit;
+}
+
+.project-image:hover + .project-info h2 {
+    color: inherit;
 }
 
 /* Video kontrolleri için */
@@ -442,7 +458,7 @@ html {
     height: 4px;
     background: rgba(255,255,255,0.2);
     border-radius: 2px;
-    cursor: pointer;
+    cursor: default;
     position: relative;
 }
 
@@ -469,7 +485,7 @@ html {
     border-radius: 2px;
     overflow: hidden;
     transition: width 0.3s ease;
-    cursor: pointer;
+    cursor: default;
 }
 
 .volume-control:hover .volume-slider {
@@ -513,5 +529,7 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 9999;
+} 
     z-index: 9999;
 } 
