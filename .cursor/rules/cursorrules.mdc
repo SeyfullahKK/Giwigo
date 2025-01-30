@@ -1,0 +1,16 @@
+---
+description: Video portfolyo sitesi yapıyoruz. Yapılan değişiklikleri yeni adımda bozmadan devam etmemiz gerekiyor. Sade ama şık bir tasarım istiyoruz. Benim istemediğim ayarlar için onay iste, her şeyi bir anda değiştirme. https://themill.com/ bu siteden örnek alıyoruz.
+globs: 
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+Video portfolyo sitesi yapıyoruz.
+Yapılan değişiklikleri yeni adımda bozmadan devam etmemiz gerekiyor.
+Sade ama şık bir tasarım istiyoruz.
+Benim istemediğim ayarlar için onay iste, her şeyi bir anda değiştirme.
+[index.html](mdc:index.html) bu sayfada yer alıyor videolar.
+[style.css](mdc:style.css) görüntü tanımlamaları burada yer alıyor. ve istediğğim şekilde düzgün bir tasarım yap.
+Yeni bir düzenleme ve ekleme yapıalcağı zaman hep mevcut yapıyı kontrol et ve yapıyı bozma.

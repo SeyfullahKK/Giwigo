@@ -1,0 +1,899 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #888888;
+    --background-color: #000000;
+    --hover-color: #1a1a1a;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Font ayarlamaları */
+h1, h2, h3, p, a, .number, .label, .contact-link {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 500;
+}
+
+p, .label, .nav-right a, .contact-link {
+    font-weight: 300;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem calc((100% - 1400px) / 2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-left .logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+    padding-right: 0;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.nav-right a:hover {
+    color: var(--primary-color);
+}
+
+/* Intro Section */
+.intro {
+    padding: 120px 0 40px 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro-text {
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text h2 {
+    font-size: 4vw;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.intro-text p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    max-width: 800px;
+    margin-bottom: 1rem;
+}
+
+/* Works Section - Temel yapı */
+.works {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.works-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 90px 70px 90px 70px;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-areas: 
+        "main-video main-video"
+        "left-video right-video"
+        "full-width full-width"
+        "big-left small-top"
+        "big-left small-bottom"
+        "bottom-full bottom-full"
+        "small-left-top small-left-bottom"
+        "big-right big-right"
+        "new-main new-main"
+        "new-left new-right"
+        "new-full new-full"
+        "new-big-left new-small-top"
+        "new-big-left new-small-bottom"
+        "new-bottom-full new-bottom-full"
+        "new-small-left new-small-right"
+        "new-big-center new-big-center"
+        "new-last-full new-last-full";
+    grid-template-columns: 31% 67%;
+    gap: 20px;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Ana video */
+.video-left-large {
+    grid-area: main-video;
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 40px;
+}
+
+/* İkinci sıra videolar */
+.video-right-top {
+    grid-area: left-video;
+    width: 100%;
+    height: 50vh;
+}
+
+.video-right-bottom {
+    grid-area: right-video;
+    width: 100%;
+    height: 50vh;
+}
+
+/* Tam genişlik video */
+.video-full-width {
+    grid-area: full-width;
+    width: 100%;
+    height: 80vh;
+    margin: 40px 0;
+}
+
+/* Sol büyük video */
+.video-half-left {
+    grid-area: big-left;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sağ üst küçük video */
+.video-half-right {
+    grid-area: small-top;
+    width: 100%;
+    height: 49vh;
+}
+
+/* Sağ alt küçük video */
+.video-bottom-full {
+    grid-area: small-bottom;
+    width: 100%;
+    height: 49vh;
+    margin-top: 0;
+}
+
+/* Sağ alt köşe videolar */
+.video-corner-right {
+    grid-area: big-right;
+    width: 67%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+/* Video görünüm ayarları */
+.project-item {
+    position: relative;
+    overflow: hidden;
+    background: #000000;
+    transition: transform 0.3s ease;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.project-image iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Başlık animasyonu */
+.project-title {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    z-index: 2;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    height: 1.5em;
+    overflow: hidden;
+}
+
+.project-title span {
+    display: block;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.project-title span:nth-child(2) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.project-item:hover .project-title span:first-child {
+    transform: translateY(-100%);
+}
+
+.project-item:hover .project-title span:nth-child(2) {
+    transform: translateY(-100%);
+}
+
+/* Video hover efektleri */
+.project-item:hover .project-image img {
+    opacity: 0.3;
+}
+
+.project-item:hover .project-image iframe {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-image.playing iframe {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    margin-bottom: 4rem;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.about-text p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    max-width: 800px;
+}
+
+.about-stats {
+    display: flex;
+    gap: 4rem;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.label {
+    color: var(--secondary-color);
+}
+
+/* Contact Section */
+.contact {
+    padding: 8rem 2rem 4rem 2rem;
+}
+
+.contact-content {
+    text-align: left;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.contact-content h2 {
+    font-size: 4vw;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.contact-link {
+    display: inline-block;
+    width: fit-content;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    border-top: 1px solid var(--hover-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-left p {
+    color: var(--secondary-color);
+    text-align: left;
+}
+
+.footer-right {
+    display: none;
+}
+
+.social-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .works-grid {
+        grid-template-areas: 
+            "main-video"
+            "left-video"
+            "right-video"
+            "full-width"
+            "big-left"
+            "small-top"
+            "small-bottom"
+            "bottom-full"
+            "small-left-top"
+            "small-left-bottom"
+            "big-right"
+            "new-main"
+            "new-left"
+            "new-right"
+            "new-full"
+            "new-big-left"
+            "new-small-top"
+            "new-small-bottom"
+            "new-bottom-full"
+            "new-small-left"
+            "new-small-right"
+            "new-big-center"
+            "new-last-full";
+        grid-template-columns: 1fr;
+    }
+
+    .video-extra-left:first-of-type,
+    .video-extra-left:last-of-type {
+        height: 40vh;
+        margin: 10px 0;
+    }
+
+    .video-corner-right {
+        height: 70vh;
+    }
+
+    .video-new-last-full {
+        width: 100%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .works-grid {
+        padding: 0 10px;
+        gap: 10px;
+    }
+
+    .video-left-large,
+    .video-full-width {
+        height: 40vh;
+    }
+
+    .video-right-top,
+    .video-right-bottom,
+    .video-half-left,
+    .video-half-right {
+        height: 30vh;
+    }
+
+    .project-title {
+        bottom: 20px;
+        left: 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Video hover efekti için */
+.project-item:hover .project-image iframe {
+    transform: none;
+    transition: none;
+}
+
+.project-item:hover .cursor,
+.project-item:hover .cursor-follower {
+    opacity: 0;
+}
+
+.project-item:hover .project-info h2 {
+    color: inherit;
+}
+
+.project-image:hover + .project-info h2 {
+    color: inherit;
+}
+
+/* Video kontrolleri için */
+.project-image .vp-controls-wrapper {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-image:hover .vp-controls-wrapper {
+    opacity: 1;
+}
+
+/* Custom Video Kontrolleri */
+.custom-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-image:hover .custom-controls {
+    opacity: 1;
+}
+
+.controls-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: none;
+}
+
+.controls-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 15px;
+}
+
+.play-pause, .volume-btn, .fullscreen-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-pause svg, .volume-btn svg, .fullscreen-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.pause-icon {
+    display: none;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    cursor: default;
+    position: relative;
+}
+
+.progress-current {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    width: 0%;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-slider {
+    width: 0;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: default;
+}
+
+.volume-control:hover .volume-slider {
+    width: 100px;
+}
+
+.volume-current {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    width: 100%;
+}
+
+/* Video player düzenlemeleri */
+.project-image iframe {
+    pointer-events: none;
+}
+
+.project-image:hover iframe {
+    pointer-events: auto;
+}
+
+.project-image.fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.project-image.fullscreen iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.project-image.fullscreen .custom-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .nav-right a {
+        margin-left: 15px;
+    }
+    
+    .intro, .contact {
+        padding: 100px 20px 40px;
+    }
+    
+    .intro-text h2, .contact-content h2 {
+        font-size: 28px;
+    }
+    
+    footer {
+        padding: 15px 20px;
+    }
+}
+
+.project-image:hover .vp-controls-wrapper,
+.project-image:hover .custom-controls {
+    opacity: 0;
+}
+
+/* YouTube bilgilendirmelerini gizle */
+.project-image iframe:not(:hover) {
+    pointer-events: none;
+}
+
+.project-image iframe::before,
+.project-image iframe::after {
+    display: none !important;
+}
+
+/* YouTube watermark'ı gizle */
+.ytp-watermark,
+.ytp-chrome-top,
+.ytp-chrome-bottom,
+.ytp-gradient-top,
+.ytp-gradient-bottom,
+.ytp-pause-overlay {
+    display: none !important;
+}
+
+/* Video Popup Stili */
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.98);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-popup.active {
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+}
+
+.popup-video-container {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.popup-video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-popup {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    z-index: 10000;
+}
+
+.close-popup:hover {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+    }
+    
+    .close-popup {
+        right: 0;
+        top: -50px;
+    }
+}
+
+/* YouTube elementlerini gizle */
+.ytp-chrome-top,
+.ytp-chrome-bottom,
+.ytp-gradient-top,
+.ytp-gradient-bottom,
+.ytp-watermark,
+.ytp-title,
+.ytp-show-cards-title,
+.ytp-pause-overlay {
+    display: none !important;
+}
+
+/* Video container arka planını temizle */
+.project-image iframe {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* İlk video başlığı için özel stil */
+.project-item:first-child .project-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* Sağdaki videolar için özel stil */
+.project-item:nth-child(2) .project-title,
+.project-item:nth-child(3) .project-title {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* Video konumları */
+.video-extra-left:first-of-type {
+    grid-area: small-left-top;
+    width: 100%;
+    height: 49vh;
+    margin-bottom: 20px;
+}
+
+.video-extra-left:last-of-type {
+    grid-area: small-left-bottom;
+    width: 100%;
+    height: 49vh;
+    margin-top: 0;
+}
+
+/* Yeni video alanları için stiller */
+.video-new-main {
+    grid-area: new-main;
+    width: 100%;
+    height: 80vh;
+    margin-top: 40px;
+}
+
+.video-new-left {
+    grid-area: new-left;
+    width: 100%;
+    height: 50vh;
+}
+
+.video-new-right {
+    grid-area: new-right;
+    width: 100%;
+    height: 50vh;
+}
+
+.video-new-full {
+    grid-area: new-full;
+    width: 100%;
+    height: 80vh;
+    margin: 40px 0;
+}
+
+.video-new-big-left {
+    grid-area: new-big-left;
+    width: 100%;
+    height: 100vh;
+}
+
+.video-new-small-top {
+    grid-area: new-small-top;
+    width: 100%;
+    height: 49vh;
+}
+
+.video-new-small-bottom {
+    grid-area: new-small-bottom;
+    width: 100%;
+    height: 49vh;
+}
+
+.video-new-bottom-full {
+    grid-area: new-bottom-full;
+    width: 100%;
+    height: 80vh;
+    margin: 40px 0;
+}
+
+.video-new-small-left {
+    grid-area: new-small-left;
+    width: 100%;
+    height: 49vh;
+}
+
+.video-new-small-right {
+    grid-area: new-small-right;
+    width: 100%;
+    height: 49vh;
+}
+
+.video-new-big-center {
+    grid-area: new-small-bottom;
+    width: 100%;
+    height: 49vh;
+    margin: 0;
+}
+
+.video-new-big-center .project-image {
+    width: 100%;
+    height: 100%;
+}
+
+/* Yeni video alanları için stiller */
+.video-new-last-full {
+    grid-area: new-last-full;
+    width: 67%;
+    height: 100vh;
+    margin: 40px auto;
+} 
