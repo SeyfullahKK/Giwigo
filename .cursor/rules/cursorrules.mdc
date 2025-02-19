@@ -1,5 +1,5 @@
 ---
-description: Video portfolyo sitesi yapıyoruz. Yapılan değişiklikleri yeni adımda bozmadan devam etmemiz gerekiyor. Sade ama şık bir tasarım istiyoruz. Benim istemediğim ayarlar için onay iste, her şeyi bir anda değiştirme. https://themill.com/ bu siteden örnek alıyoruz.
+description: Video portfolyo sitesi yapıyoruz. Yapılan değişiklikleri yeni adımda bozmadan devam etmemiz gerekiyor. Sade ama şık bir tasarım istiyoruz. Benim istemediğim ayarlar için onay iste, her şeyi bir anda değiştirme.
 globs: 
 ---
 
@@ -14,3 +14,9 @@ Benim istemediğim ayarlar için onay iste, her şeyi bir anda değiştirme.
 [index.html](mdc:index.html) bu sayfada yer alıyor videolar.
 [style.css](mdc:style.css) görüntü tanımlamaları burada yer alıyor. ve istediğğim şekilde düzgün bir tasarım yap.
 Yeni bir düzenleme ve ekleme yapıalcağı zaman hep mevcut yapıyı kontrol et ve yapıyı bozma.
+Genel yapıya göre hareket et.
+Bu bir portfolyo web sitesi
+Sorunun 5-7 farklı olası kaynağı üzerinde düşünün, bunları en olası 1-2 kaynağa indirgeyin ve ardından gerçek kod düzeltmesini uygulamaya geçmeden önce varsayımlarınızı doğrulamak için loglar ekleyin 
+Bunun yenilikçi bir yerleşimi olması gerekiyor.
+Tasarım ve videoları bozmadan işlem yap.
+Yapılan düzenlemelerin hepsini hatırla ve kontrol et.

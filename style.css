@@ -38,21 +38,31 @@ p, .label, .nav-right a, .contact-link {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem calc((100% - 1400px) / 2);
+    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.navbar > div {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-left .logo {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 500;
+    letter-spacing: 0.02em;
 }
 
 .nav-right {
@@ -85,7 +95,7 @@ p, .label, .nav-right a, .contact-link {
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    padding-left: 0;
+    padding: 0 120px;
     margin-bottom: 0.5rem;
 }
 
@@ -102,193 +112,305 @@ p, .label, .nav-right a, .contact-link {
     margin-bottom: 1rem;
 }
 
-/* Works Section - Temel yapı */
-.works {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: var(--background-color);
-}
-
+/* Works Section */
 .works-container {
     width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 90px 70px 90px 70px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 120px;
 }
 
 .works-grid {
     display: grid;
-    grid-template-areas: 
-        "main-video main-video"
-        "left-video right-video"
-        "full-width full-width"
-        "big-left small-top"
-        "big-left small-bottom"
-        "bottom-full bottom-full"
-        "small-left-top small-left-bottom"
-        "big-right big-right"
-        "new-main new-main"
-        "new-left new-right"
-        "new-full new-full"
-        "new-big-left new-small-top"
-        "new-big-left new-small-bottom"
-        "new-bottom-full new-bottom-full"
-        "new-small-left new-small-right"
-        "new-big-center new-big-center"
-        "new-last-full new-last-full";
-    grid-template-columns: 31% 67%;
-    gap: 20px;
-    width: 100%;
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0;
 }
 
-/* Ana video */
-.video-left-large {
-    grid-area: main-video;
-    width: 100%;
-    height: 80vh;
-    margin-bottom: 40px;
-}
-
-/* İkinci sıra videolar */
-.video-right-top {
-    grid-area: left-video;
-    width: 100%;
-    height: 50vh;
-}
-
-.video-right-bottom {
-    grid-area: right-video;
-    width: 100%;
-    height: 50vh;
-}
-
-/* Tam genişlik video */
-.video-full-width {
-    grid-area: full-width;
-    width: 100%;
-    height: 80vh;
-    margin: 40px 0;
-}
-
-/* Sol büyük video */
-.video-half-left {
-    grid-area: big-left;
-    width: 100%;
-    height: 100vh;
-}
-
-/* Sağ üst küçük video */
-.video-half-right {
-    grid-area: small-top;
-    width: 100%;
-    height: 49vh;
-}
-
-/* Sağ alt küçük video */
-.video-bottom-full {
-    grid-area: small-bottom;
-    width: 100%;
-    height: 49vh;
-    margin-top: 0;
-}
-
-/* Sağ alt köşe videolar */
-.video-corner-right {
-    grid-area: big-right;
-    width: 67%;
-    height: 100vh;
-    margin: 0 auto;
-}
-
-/* Video görünüm ayarları */
 .project-item {
     position: relative;
     overflow: hidden;
-    background: #000000;
-    transition: transform 0.3s ease;
+    background: black;
+    border-radius: 8px;
+    aspect-ratio: 16/9;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Son video için özel stil */
+.project-item:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+    justify-self: center;
+}
+
+/* Tüm piece sınıflarını kaldır */
+.piece-large,
+.piece-medium,
+.piece-small {
+    grid-column: span 1;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 1800px) {
+    .navbar > div {
+        padding: 0 100px;
+    }
+    
+    .intro-text,
+    .works-container {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    .project-item:last-child {
+        width: 60%;
+    }
+    
+    .works-grid {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .navbar > div {
+        padding: 0 80px;
+    }
+    
+    .intro-text,
+    .works-container {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    
+    .works-grid {
+        gap: 10px;
+    }
+    
+    .project-item:last-child {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar > div {
+        padding: 0 60px;
+    }
+    
+    .intro-text,
+    .works-container {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    
+    .works-grid {
+        gap: 8px;
+    }
+    
+    .project-item:last-child {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar > div {
+        padding: 0 30px;
+    }
+    
+    .intro-text,
+    .works-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .project-item {
+        grid-column: span 1;
+    }
+    
+    .project-item:last-child {
+        max-width: 100%;
+    }
+}
+
+/* Ana Video Grubu */
+.video-left-large {
+    grid-column: span 2;
+    height: 80vh;
+}
+
+.video-right-top,
+.video-right-bottom {
+    grid-column: span 1;
+    height: 39vh;
+}
+
+.video-right-bottom {
+    margin-top: 2vh;
+}
+
+/* Tam Genişlik Video */
+.video-full-width {
+    grid-column: span 3;
+    height: 70vh;
+    margin: 25px 0;
+}
+
+/* İkili Video Grubu */
+.video-half-left,
+.video-half-right {
+    grid-column: span 3;
+    height: 60vh;
+}
+
+@media (min-width: 1024px) {
+    .video-half-left {
+        grid-column: span 2;
+    }
+    
+    .video-half-right {
+        grid-column: span 1;
+    }
+}
+
+/* Küçük Video Grubu */
+.video-extra-left {
+    grid-column: span 1;
+    height: 50vh;
+}
+
+/* After Effects Template Grubu */
+.video-new-main {
+    grid-column: span 2;
+    height: 80vh;
+}
+
+.video-new-small-top,
+.video-new-small-bottom {
+    grid-column: span 1;
+    height: 39vh;
+}
+
+.video-new-small-bottom {
+    margin-top: 2vh;
+}
+
+.video-new-small-left,
+.video-new-full,
+.video-new-bottom-full {
+    grid-column: span 1;
+    height: 50vh;
+}
+
+.video-new-last-full {
+    grid-column: span 3;
+    height: 70vh;
+    margin: 25px 0;
+}
+
+/* Proje Öğeleri Stilleri */
+.project-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 .project-image {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: relative;
+    background-color: black;
     overflow: hidden;
-    cursor: pointer;
+    border-radius: 8px;
 }
 
 .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-}
-
-.project-image iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
+    object-fit: cover;
     transition: opacity 0.3s ease;
-    pointer-events: none;
     z-index: 1;
+    opacity: 1;
 }
 
-/* Başlık animasyonu */
+.project-item:hover .project-image img {
+    opacity: 1;
+}
+
+.project-item:hover .project-image iframe.loaded {
+    opacity: 1;
+}
+
+.project-item:hover .project-image iframe:not(.loaded) {
+    opacity: 0;
+}
+
+.project-item:hover .project-image iframe:not(.loaded) + img {
+    opacity: 1;
+}
+
+.project-image iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+/* Başlık stilleri */
 .project-title {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 0.1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
     z-index: 2;
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-    height: 1.5em;
-    overflow: hidden;
+    padding: 20px;
+    background-color: transparent;
 }
 
 .project-title span {
     display: block;
-    position: relative;
-    transition: transform 0.5s ease;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.project-title span:nth-child(2) {
-    position: absolute;
-    top: 100%;
-    left: 0;
-}
-
-.project-item:hover .project-title span:first-child {
-    transform: translateY(-100%);
-}
-
-.project-item:hover .project-title span:nth-child(2) {
-    transform: translateY(-100%);
+.project-item:hover .project-title {
+    opacity: 1;
+    transform: none;
 }
 
 /* Video hover efektleri */
 .project-item:hover .project-image img {
-    opacity: 0.3;
+    opacity: 1;
+    transition: opacity 0.1s ease;
 }
 
-.project-item:hover .project-image iframe {
+.project-item:hover .project-image iframe.loaded {
     opacity: 1;
-    pointer-events: auto;
+}
+
+.project-item:hover .project-image iframe:not(.loaded) + img {
+    opacity: 1;
 }
 
 .project-image.playing iframe {
     opacity: 1;
-    pointer-events: auto;
 }
 
 /* About Section */
@@ -337,14 +459,14 @@ p, .label, .nav-right a, .contact-link {
 
 /* Contact Section */
 .contact {
-    padding: 8rem 2rem 4rem 2rem;
+    padding: 8rem 0 4rem 0;
 }
 
 .contact-content {
     text-align: left;
     max-width: 1400px;
     margin: 0 auto;
-    padding-left: 0;
+    padding: 0 120px;
 }
 
 .contact-content h2 {
@@ -385,7 +507,7 @@ footer {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 120px;
 }
 
 .footer-left p {
@@ -405,77 +527,6 @@ footer {
 
 .social-link:hover {
     color: var(--primary-color);
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .works-grid {
-        grid-template-areas: 
-            "main-video"
-            "left-video"
-            "right-video"
-            "full-width"
-            "big-left"
-            "small-top"
-            "small-bottom"
-            "bottom-full"
-            "small-left-top"
-            "small-left-bottom"
-            "big-right"
-            "new-main"
-            "new-left"
-            "new-right"
-            "new-full"
-            "new-big-left"
-            "new-small-top"
-            "new-small-bottom"
-            "new-bottom-full"
-            "new-small-left"
-            "new-small-right"
-            "new-big-center"
-            "new-last-full";
-        grid-template-columns: 1fr;
-    }
-
-    .video-extra-left:first-of-type,
-    .video-extra-left:last-of-type {
-        height: 40vh;
-        margin: 10px 0;
-    }
-
-    .video-corner-right {
-        height: 70vh;
-    }
-
-    .video-new-last-full {
-        width: 100%;
-        height: 70vh;
-    }
-}
-
-@media (max-width: 768px) {
-    .works-grid {
-        padding: 0 10px;
-        gap: 10px;
-    }
-
-    .video-left-large,
-    .video-full-width {
-        height: 40vh;
-    }
-
-    .video-right-top,
-    .video-right-bottom,
-    .video-half-left,
-    .video-half-right {
-        height: 30vh;
-    }
-
-    .project-title {
-        bottom: 20px;
-        left: 20px;
-        font-size: 1rem;
-    }
 }
 
 /* Smooth Scrolling */
@@ -731,6 +782,7 @@ html {
     width: 100%;
     height: 100%;
     border: none;
+    pointer-events: auto;
 }
 
 .close-popup {
@@ -766,24 +818,6 @@ html {
     }
 }
 
-/* YouTube elementlerini gizle */
-.ytp-chrome-top,
-.ytp-chrome-bottom,
-.ytp-gradient-top,
-.ytp-gradient-bottom,
-.ytp-watermark,
-.ytp-title,
-.ytp-show-cards-title,
-.ytp-pause-overlay {
-    display: none !important;
-}
-
-/* Video container arka planını temizle */
-.project-image iframe {
-    background: transparent !important;
-    border: none !important;
-}
-
 /* İlk video başlığı için özel stil */
 .project-item:first-child .project-title {
     font-size: 1.5rem;
@@ -800,100 +834,250 @@ html {
 }
 
 /* Video konumları */
-.video-extra-left:first-of-type {
-    grid-area: small-left-top;
-    width: 100%;
-    height: 49vh;
-    margin-bottom: 20px;
+.video-extra-left {
+    grid-column: span 3;
+    height: 45vh;
 }
 
+/* Küçük Video Grupları */
+.small-video-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Göz Aydınlığı ve diğer küçük videolar */
+.video-extra-left:first-of-type,
+.video-extra-left:nth-of-type(2),
+.video-extra-left:nth-of-type(3),
 .video-extra-left:last-of-type {
-    grid-area: small-left-bottom;
-    width: 100%;
-    height: 49vh;
-    margin-top: 0;
+    grid-column: span 3;
+    height: 45vh;
+    margin: 0;
 }
 
 /* Yeni video alanları için stiller */
 .video-new-main {
-    grid-area: new-main;
-    width: 100%;
-    height: 80vh;
-    margin-top: 40px;
-}
-
-.video-new-left {
-    grid-area: new-left;
-    width: 100%;
-    height: 50vh;
-}
-
-.video-new-right {
-    grid-area: new-right;
-    width: 100%;
-    height: 50vh;
-}
-
-.video-new-full {
-    grid-area: new-full;
-    width: 100%;
-    height: 80vh;
-    margin: 40px 0;
-}
-
-.video-new-big-left {
-    grid-area: new-big-left;
-    width: 100%;
-    height: 100vh;
+    grid-column: 1 / 10;
+    grid-row: span 2;
+    height: 85vh;
 }
 
 .video-new-small-top {
-    grid-area: new-small-top;
-    width: 100%;
-    height: 49vh;
+    grid-column: 10 / 13;
+    grid-row: span 1;
+    height: 41vh;
 }
 
 .video-new-small-bottom {
-    grid-area: new-small-bottom;
-    width: 100%;
-    height: 49vh;
-}
-
-.video-new-bottom-full {
-    grid-area: new-bottom-full;
-    width: 100%;
-    height: 80vh;
-    margin: 40px 0;
+    grid-column: 10 / 13;
+    grid-row: span 1;
+    height: 41vh;
 }
 
 .video-new-small-left {
-    grid-area: new-small-left;
-    width: 100%;
-    height: 49vh;
+    grid-column: 1 / 4;
+    grid-row: span 1;
+    height: 45vh;
 }
 
-.video-new-small-right {
-    grid-area: new-small-right;
-    width: 100%;
-    height: 49vh;
+.video-new-full {
+    grid-column: 4 / 9;
+    grid-row: span 1;
+    height: 45vh;
 }
 
-.video-new-big-center {
-    grid-area: new-small-bottom;
-    width: 100%;
-    height: 49vh;
-    margin: 0;
+.video-new-bottom-full {
+    grid-column: 9 / 13;
+    grid-row: span 1;
+    height: 45vh;
 }
 
-.video-new-big-center .project-image {
+/* YouTube elementlerini kesin olarak gizle */
+iframe[src*="youtube"] {
+    z-index: 2;
+    background: transparent !important;
+}
+
+.ytp-chrome-top,
+.ytp-chrome-bottom,
+.ytp-gradient-top,
+.ytp-gradient-bottom,
+.ytp-watermark,
+.ytp-title,
+.ytp-show-cards-title,
+.ytp-pause-overlay,
+.ytp-spinner,
+.ytp-cued-thumbnail-overlay,
+.ytp-large-play-button,
+.ytp-youtube-button,
+.ytp-embed-title,
+.ytp-embed-channel-name,
+.ytp-small-mode,
+.ytp-chrome-controls,
+.ytp-button,
+.ytp-menuitem,
+.ytp-ce-element,
+.ytp-iv-player-content,
+.ytp-ce-covering-overlay,
+.ytp-ce-element-shadow,
+.ytp-ce-covering-image,
+.ytp-ce-expanding-image,
+.ytp-ce-element.ytp-ce-channel,
+.ytp-ce-element.ytp-ce-video,
+.ytp-ce-element.ytp-ce-playlist,
+.ytp-pause-overlay-container,
+.ytp-contextmenu,
+.ytp-gradient-bottom,
+.ytp-chrome-controls,
+.ytp-title-text,
+.ytp-title-channel,
+.ytp-ce-video,
+.ytp-ce-playlist,
+.ytp-cards-button,
+.ytp-pause-overlay,
+.ytp-related-videos-container,
+.ytp-spinner-container,
+.ytp-player-content,
+.ytp-endscreen-content,
+.ytp-share-panel,
+.ytp-watch-later-button,
+.ytp-share-button,
+.ytp-subtitles-button,
+.ytp-settings-button,
+.ytp-fullscreen-button,
+.ytp-time-display,
+.ytp-progress-bar-container,
+.ytp-volume-panel {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: none !important;
+}
+
+/* Video Hover Efektleri */
+.project-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    border-radius: 8px;
+}
+
+.project-item:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 1800px) {
+    .contact-content {
+        padding: 0 100px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .contact-content {
+        padding: 0 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-content {
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 0 30px;
+    }
+}
+
+/* Video container stilini güncelle */
+.project-image {
+    position: relative;
     width: 100%;
     height: 100%;
+    background-color: black;
+    overflow: hidden;
+    border-radius: 8px;
 }
 
-/* Yeni video alanları için stiller */
-.video-new-last-full {
-    grid-area: new-last-full;
-    width: 67%;
-    height: 100vh;
-    margin: 40px auto;
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    opacity: 1;
+}
+
+/* Tüm YouTube UI elementlerini gizleme */
+.ytp-watermark,
+.ytp-chrome-top,
+.ytp-chrome-bottom,
+.ytp-title-link,
+.ytp-title-channel,
+.ytp-share-button,
+.ytp-button.ytp-share-button-visible,
+.ytp-overflow-button,
+.ytp-pause-overlay,
+.ytp-branding-logo,
+.ytp-branding-link,
+.ytp-contextmenu,
+.ytp-menuitem,
+.ytp-ce-element {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Mobil görünüm için ek kurallar */
+@media (max-width: 768px) {
+  .ytp-chrome-controls,
+  .ytp-small-mode .ytp-chrome-controls {
+    display: none !important;
+  }
+  
+  .project-image iframe {
+    position: absolute;
+    width: 150% !important;
+    height: 150% !important;
+    transform: translate(-17%, -17%) scale(0.67);
+    pointer-events: none;
+  }
+}
+
+/* YouTube iframe içi stilleri */
+#player iframe {
+  position: relative;
+  z-index: 0;
+}
+
+#player::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0) 20%,
+    rgba(0,0,0,0) 80%,
+    rgba(0,0,0,0.1) 100%
+  );
 } 
