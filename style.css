@@ -168,10 +168,6 @@ p, .label, .nav-right a, .contact-link {
     .project-item:last-child {
         width: 60%;
     }
-    
-    .works-grid {
-        gap: 12px;
-    }
 }
 
 @media (max-width: 1400px) {
@@ -183,10 +179,6 @@ p, .label, .nav-right a, .contact-link {
     .works-container {
         padding-left: 80px;
         padding-right: 80px;
-    }
-    
-    .works-grid {
-        gap: 10px;
     }
     
     .project-item:last-child {
@@ -203,10 +195,6 @@ p, .label, .nav-right a, .contact-link {
     .works-container {
         padding-left: 60px;
         padding-right: 60px;
-    }
-    
-    .works-grid {
-        gap: 32px;
     }
     
     .project-item:last-child {
@@ -227,7 +215,6 @@ p, .label, .nav-right a, .contact-link {
     
     .works-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
     }
     
     .project-item {
@@ -715,6 +702,15 @@ html {
     
     footer {
         padding: 15px 20px;
+    }
+
+    .project-title span {
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+    }
+
+    .project-item {
+        gap: 6px;
     }
 }
 
