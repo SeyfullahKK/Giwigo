@@ -312,6 +312,7 @@ p, .label, .nav-right a, .contact-link {
     border-radius: 8px;
     overflow: hidden;
     aspect-ratio: 16/9;
+    cursor: pointer;
 }
 
 .project-image img {
@@ -326,35 +327,8 @@ p, .label, .nav-right a, .contact-link {
     opacity: 1;
 }
 
-.project-item:hover .project-image img {
-    opacity: 1;
-}
-
-.project-item:hover .project-image iframe.loaded {
-    opacity: 1;
-}
-
-.project-item:hover .project-image iframe:not(.loaded) {
-    opacity: 0;
-}
-
-.project-item:hover .project-image iframe:not(.loaded) + img {
-    opacity: 1;
-}
-
 .project-image iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: transparent;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 8px;
-    z-index: 2;
+    display: none;
 }
 
 /* Başlık stilleri */
@@ -385,19 +359,15 @@ p, .label, .nav-right a, .contact-link {
 /* Video hover efektleri */
 .project-item:hover .project-image img {
     opacity: 1;
-    transition: opacity 0.1s ease;
-}
-
-.project-item:hover .project-image iframe.loaded {
-    opacity: 1;
-}
-
-.project-item:hover .project-image iframe:not(.loaded) + img {
-    opacity: 1;
 }
 
 .project-image.playing iframe {
-    opacity: 1;
+    display: none;
+}
+
+.project-image:hover .vp-controls-wrapper,
+.project-image:hover .custom-controls {
+    display: none;
 }
 
 /* About Section */
@@ -721,7 +691,7 @@ html {
 
 /* YouTube bilgilendirmelerini gizle */
 .project-image iframe:not(:hover) {
-    pointer-events: none;
+    display: none;
 }
 
 .project-image iframe::before,
@@ -978,27 +948,6 @@ iframe[src*="youtube"] {
     .contact-content {
         padding: 0 30px;
     }
-}
-
-/* Video container stilini güncelle */
-.project-image {
-    position: relative;
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    aspect-ratio: 16/9;
-}
-
-.project-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-    opacity: 1;
 }
 
 /* Tüm YouTube UI elementlerini gizleme */
