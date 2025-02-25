@@ -194,18 +194,28 @@ p, .label, .nav-right a, .contact-link {
 }
 
 .project-title span {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.2rem;
     font-weight: 400;
     text-align: left;
-    display: block;
+    display: inline-block;
     padding: 0;
     letter-spacing: 0.035em;
+    transition: var(--transition);
+}
+
+.project-title span:hover {
+    color: var(--primary-color);
 }
 
 .project-item:hover .project-title {
     opacity: 1;
     transform: none;
+    color: var(--secondary-color);
+}
+
+.project-item:hover .project-title span {
+    color: var(--secondary-color);
 }
 
 /* Video hover efektleri */
@@ -780,8 +790,14 @@ iframe[src*="youtube"] {
     border-radius: 0;
 }
 
+/* Hover efektini kaldır */
 .project-item:hover::after {
-    opacity: 1;
+    opacity: 0;
+}
+
+/* Proje Öğeleri Stilleri */
+.project-item:hover {
+    box-shadow: none;
 }
 
 @media (max-width: 1800px) {
@@ -1019,11 +1035,6 @@ iframe[src*="youtube"] {
     grid-column: span 3;
     height: 70vh;
     margin: 25px 0;
-}
-
-/* Proje Öğeleri Stilleri */
-.project-item:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Sosyal Medya İkonları */
