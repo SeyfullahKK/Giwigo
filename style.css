@@ -211,14 +211,28 @@ p, .label, .nav-right a, .contact-link {
 .project-item:hover .project-title {
     opacity: 1;
     transform: none;
-    color: var(--secondary-color);
 }
 
-.project-item:hover .project-title span {
-    color: var(--secondary-color);
+.project-item:hover .project-title span:hover {
+    color: var(--primary-color);
 }
 
 /* Video hover efektleri */
+.project-item .project-image {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.project-item:hover .project-image {
+    border: 2px solid var(--primary-color);
+}
+
+.project-item .project-image img {
+    transition: var(--transition);
+}
+
 .project-item:hover .project-image img {
     opacity: 1;
 }
