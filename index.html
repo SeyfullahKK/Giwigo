@@ -276,15 +276,13 @@
         <div class="video-popup">
             <div class="popup-content">
                 <button class="close-popup">&times;</button>
-                <div class="popup-flex-container">
-                    <div class="popup-video-container"></div>
-                    <div class="popup-info">
-                        <div class="popup-thumbnail">
-                            <img src="" alt="Video Thumbnail" class="popup-thumb-img">
-                        </div>
-                        <h3 class="popup-title"></h3>
-                        <p class="popup-description"></p>
+                <div class="popup-video-container"></div>
+                <div class="popup-info-container">
+                    <div class="popup-thumbnail">
+                        <img src="" alt="Video Thumbnail">
                     </div>
+                    <h3 class="popup-title"></h3>
+                    <div class="popup-description"></div>
                 </div>
             </div>
         </div>
@@ -330,53 +328,6 @@
         tag.src = "https://www.youtube.com/iframe_api";
         let firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        
-        // Video açıklamaları için sabit içerikler
-        const videoDescriptions = {
-            'zIRfbXA3xBA': 'İlim Dersleri TV Show Opener - İlim Dersleri TV Show Opener, transitions are designed using materials appropriate to the concept and balanced vectors. It is designed for educational purposes, with its antique appearance and colors used, and the use of contrast and line transitions appropriate to the subject of the design.',
-            
-            'pJXidpkwkvM': 'Fashion Freeze Frame - After Effects Template - This template is a modern template with fashion content. The project contains many text animations. The template is the trending choice for advertising in fashion, style, trend, slideshows, promotions and video events. It contains 9 media 19 text placeholders.',
-            
-            'mfITzT8OD-U': 'Festival Photo Slideshow - After Effects Template - A unique activity and celebration display, this slideshow is a great introduction or opening for your celebrations, event promotions and event videos, or showcase your special occasions, memories, friends and family photos. Impress your audience with this eye-catching and professional animated slideshow.',
-            
-            '2Gprl-_jrBw': 'Ziraat Katılım Bank Promotional Video - The aim was to clearly convey the messages given in the video by using a modern and readable font in line with Ziraat Katılım Bank\'s brand identity. In this reliable and professional bank advertisement, simple and stylish fonts were preferred. Complex information about banking and finance is simplified through icons and symbols. In this way, it provided fast and effective information transfer to the audience about banking products.\n\nA balanced and organized structure in this template makes it easier for the viewer to follow the video. In Ziraat Katılım Bank\'s promotional video, visual pollution was avoided by using symmetrical arrangements and careful hierarchy and placement.',
-            
-            'eqzObwbnIp8': 'Dilediğince Promotional Video - Dilediğince Promotional Video, we wanted to emphasize reliable marketing in this design, which was designed as a part of the marketing strategy of the brand and the initiative and generally aims to inform, attract or mobilize the audience. It provides support for animation elements that support the story with the colors and transitions used.',
-            
-            'eCFPB7DMOxU': 'Teneffüs Visual Identity Design - This is a fun, music and children themed work based on Teneffüs Visual Identity Desig. In this template we designed for education and school, colors, music, and readable and aesthetically compatible fonts that reflect the character of the brand are used throughout the video. The typography created language that clearly conveyed the message of the video and matched the visual identity of the brand.',
-            
-            'd1x3vNJDKlg': 'Icon Transitions - After Effects Template - It adds fluency to your projects with its fun expressions. It is designed to provide a smooth, fun and trendy transition effect. It offers a fun aesthetic to your design with its iconic movements. It strengthens the visual experience by providing transitions between scenes. It will help promote the social media page and other promotions.',
-            
-            'aucoHAozQYw': 'Slideshow Pack Pro - After Effects Template - 1500 Animated scenes\n60+ Unique concepts\n50+ Ready to render templates\n3 hours 22 minutes total duration\n4 duration versions for all templates\n1920×1080 Full HD Resolution\nSuper easy to use\nOne-click workflow\nThousands of possibilities\nChangeable duration\nFast render optimisation\nOnline scene catalog\nOnline template catalog\nFast support\nFree lifetime updates\nAfter Effects CC or above\nNo plugins required\nFonts and music links included\nTutorial video included\n\nWhat is included in the project?\n\nSlideshow Pack Pro After Effects project files\nOnline catalog for scene types\nOnline catalog for templates\nVideo tutorial\nFont links\nMusic links',
-            
-            'ZgsrnsOLy1A': 'Noddle Instagram Reels - After Effects Template - Noddle Instagram Reels - After Effects Template: This template is a template where you can showcase your delicious noodle ads and traditional dishes. This template is the best decision to promote your noodle promotions in your menu.',
-            
-            'W0Veg1ER2II': 'Youtube Freeze Frame - After Effects Template - It\'s a great way to showcase your photos and videos with professional animations. It is also the best choice to display your advertisements, apparel and promotions. The most suitable design for identifying characters in complex and crowded videos. This product is a great tool for youtubers, vloggers and travelers.',
-            
-            'QqY06MuEmJU': 'Sandwich Tiktok Stories - After Effects Template - This template, which is the greatest tool for promoting your easy snack menus on social media, includes promotions, snacks and ready-made foods. Try this easy-to-use template now!',
-            
-            'OASTVv49UBU': 'Göz Aydınlığı TV Show Opener - The design of Göz Aydınlığı TV Show Opener is strengthened with peaceful, serene and healthy colors in accordance with the collage method and concept used. It is designed as the promotional credits of TV programs such as baby, child, health and maternal health, with visuals, music and transitions suitable for the concept.',
-            
-            'NSW-dfCgcDM': 'Wedding Photo Slideshow - After Effects Template - Wedding Moments Slideshow is an instant looking and simple animated template with elegantly animated slow-motion photo frames that showcase your media in style. This template includes 15 text placeholders and 43 media placeholders. You can use it to showcase your wedding day, anniversary, romantic moments, special days, memories, friends and family photos. Cherish your memories with this emotional and elegant animated template.',
-            
-            'NJFyvcGrogk': 'Sofmina Promotional Video - Sofmina Promotional Video, this advertising video designed for internet use includes the promotion of many clothing, fashion and more products. This video design, which can also promote any product in the phone application, is an animation that we helped strengthen the design with the transitions and materials used, and a clean and understandable background.',
-            
-            'NERNiheQtEk': 'Vakıa TV Show Opener - An opening video, such as Vakıa TV Show Opener, is a visualized story to describe the work done by the charity organization that the channel requests from us, using graphic design elements appropriate to the type and content of the program used. We prepared the Vakıa TV Show Opener animation for this TV program where the acts of kindness and charity are highlighted.',
-            
-            'K8sCEU4xtIo': 'Party Instagram Reels - After Effects Template - This fun and inviting template with animated party design will help you promote your venues and invitations in the best way possible on social media. Crown your party world invitation with this unique template.',
-            
-            'HBwFegPBfK4': 'Flat Transitions - After Effects Template - Contains a collection of minimalist colorful scenes.\n\nYou can change the colors of this template, which you can use in any field, according to your needs. Amaze your audience with these complementary and fluid transitions.',
-            
-            'DG6wniFXhA0': 'Promotion Backgrounds - After Effects Template - This dynamic, animated product adds a striking aesthetic to your design with vibrant colors and dynamic patterns. The shapes achieved a striking appearance by reflecting the important elements of the concept.',
-            
-            '5FTQCKFwVgE': 'Gradient Backgrounds - After Effects Template - Our backgrounds consisting of neon colors add depth and dynamism to your design with color transitions and wave patterns. The colors were inspired by qualified samples that would reflect the essence of the concept. Try this galaxy-looking background that you can use in any area with bubble, abstract, circle and fluid movements.',
-            
-            '59MyvajWnyE': 'Selam Olsun TV Show Opener - Selam Olsun TV Show Opener has calm and balanced transitions and immersive line transitions designed with rose vectors designed with suitable materials. This intro animation, designed to convey the atmosphere of the characters in the program, was presented as a peaceful and informative animation.',
-            
-            'ghiFEzuFd20': 'Ziraat Katılım Bank Promotional Video - Visualizing the reliability, professionalism and customer-oriented approach of the brand, this design simplifies complex information about banking and finance through icons and symbols. In this way, fast and effective information about banking products is provided to the audience. The aim was to clearly convey the messages given in the video by using a modern and readable font in line with Ziraat Katılım Bank\'s brand identity. The sound effects, music and voice-over used throughout the video support the expression of the design in harmony with the visuals.',
-            
-            '1BDXUWn3MFc': 'Berkeley Law Corporate Film - A professional corporate film created for Berkeley Law. This video showcases the institution\'s values, academic excellence, and commitment to legal education through sophisticated visual storytelling and professional narration.'
-        };
 
         // Her video için yönetici oluştur
         const videoManagers = new Map();
@@ -391,48 +342,6 @@
                 let isLoading = false;
                 let lastTime = 0;
                 let iframe = null;
-                
-                // Video tıklama olayı
-                projectImage.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const popup = document.querySelector('.video-popup');
-                    const popupContainer = popup.querySelector('.popup-video-container');
-                    const popupTitle = popup.querySelector('.popup-title');
-                    const popupDescription = popup.querySelector('.popup-description');
-                    const popupThumbnail = popup.querySelector('.popup-thumb-img');
-                    
-                    // Video başlığını ve kapak fotoğrafını al
-                    const videoTitle = item.querySelector('.project-title span').textContent;
-                    const thumbnailSrc = item.querySelector('.project-image img').src;
-                    
-                    // Pop-up'a başlık ve kapak fotoğrafı ekle
-                    popupTitle.textContent = videoTitle;
-                    popupThumbnail.src = thumbnailSrc;
-                    
-                    // Video açıklamasını göster
-                    popupDescription.textContent = videoDescriptions[videoId] || "Bu video için açıklama bulunmamaktadır.";
-                    
-                    // YouTube iframe oluştur
-                    const popupIframe = document.createElement('iframe');
-                    popupIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`;
-                    popupIframe.allow = "autoplay; fullscreen";
-                    popupIframe.style.width = '100%';
-                    popupIframe.style.height = '100%';
-                    popupIframe.style.border = 'none';
-                    popupIframe.id = 'popup-youtube-player';
-                    
-                    popupContainer.innerHTML = '';
-                    popupContainer.appendChild(popupIframe);
-                    
-                    popup.style.display = 'flex';
-                    
-                    requestAnimationFrame(() => {
-                        popup.classList.add('active');
-                    });
-                    
-                    document.body.style.overflow = 'hidden';
-                });
                 
                 // Mouse hover olayları
                 projectImage.addEventListener('mouseenter', function() {
@@ -478,42 +387,29 @@
 
                                         // YouTube elementlerini gizle
                                         const hideElements = () => {
-                                            try {
-                                                if (iframe && iframe.contentDocument) {
-                                                    const elements = iframe.contentDocument.querySelectorAll([
-                                                        '.ytp-chrome-top',
-                                                        '.ytp-chrome-bottom',
-                                                        '.ytp-watermark',
-                                                        '.ytp-title',
-                                                        '.ytp-gradient-top',
-                                                        '.ytp-gradient-bottom',
-                                                        '.ytp-pause-overlay',
-                                                        '.ytp-contextmenu',
-                                                        '.ytp-spinner'
-                                                    ].join(','));
-                                                    
-                                                    elements.forEach(el => {
-                                                        if (el) {
-                                                            el.style.display = 'none';
-                                                            el.style.opacity = '0';
-                                                            el.style.visibility = 'hidden';
-                                                        }
-                                                    });
+                                            const elements = iframe.contentDocument.querySelectorAll([
+                                                '.ytp-chrome-top',
+                                                '.ytp-chrome-bottom',
+                                                '.ytp-watermark',
+                                                '.ytp-title',
+                                                '.ytp-gradient-top',
+                                                '.ytp-gradient-bottom',
+                                                '.ytp-pause-overlay',
+                                                '.ytp-contextmenu',
+                                                '.ytp-spinner'
+                                            ].join(','));
+                                            
+                                            elements.forEach(el => {
+                                                if (el) {
+                                                    el.style.display = 'none';
+                                                    el.style.opacity = '0';
+                                                    el.style.visibility = 'hidden';
                                                 }
-                                            } catch (error) {
-                                                console.log('YouTube elementleri gizlenirken hata oluştu:', error);
-                                            }
+                                            });
                                         };
 
                                         // Sürekli kontrol et
-                                        const hideInterval = setInterval(hideElements, 100);
-                                        
-                                        // Player destroy olduğunda interval'i temizle
-                                        player.addEventListener('onStateChange', (state) => {
-                                            if (state.data === YT.PlayerState.ENDED) {
-                                                clearInterval(hideInterval);
-                                            }
-                                        });
+                                        setInterval(hideElements, 100);
                                     },
                                     'onStateChange': (event) => {
                                         if (event.data === YT.PlayerState.PLAYING) {
@@ -549,9 +445,69 @@
                         }
                     }
                 });
+
+                // Video açıklamaları
+                const videoDescriptions = {
+                    "2Gprl-_jrBw": "Ziraat Katılım Bank Promotional Video - Visualizing the reliability, professionalism and customer-oriented approach of the brand, this design simplifies complex information about banking and finance through icons and symbols. In this way, fast and effective information about banking products is provided to the audience. The aim was to clearly convey the messages given in the video by using a modern and readable font in line with Ziraat Katılım Bank's brand identity. The sound effects, music and voice-over used throughout the video support the expression of the design in harmony with the visuals.",
+                    "ghiFEzuFd20": "Ziraat Katılım Bank Promotional Video - The aim was to clearly convey the messages given in the video by using a modern and readable font in line with Ziraat Katılım Bank's brand identity. In this reliable and professional bank advertisement, simple and stylish fonts were preferred. Complex information about banking and finance is simplified through icons and symbols. In this way, it provided fast and effective information transfer to the audience about banking products. A balanced and organized structure in this template makes it easier for the viewer to follow the video. In Ziraat Katılım Bank's promotional video, visual pollution was avoided by using symmetrical arrangements and careful hierarchy and placement.",
+                    "NJFyvcGrogk": "Sofmina Promotional Video - Sofmina Promotional Video, this advertising video designed for internet use includes the promotion of many clothing, fashion and more products. This video design, which can also promote any product in the phone application, is an animation that we helped strengthen the design with the transitions and materials used, and a clean and understandable background.",
+                    "eqzObwbnIp8": "Dilediğince Promotional Video - Dilediğince Promotional Video, we wanted to emphasize reliable marketing in this design, which was designed as a part of the marketing strategy of the brand and the initiative and generally aims to inform, attract or mobilize the audience. It provides support for animation elements that support the story with the colors and transitions used.",
+                    "eCFPB7DMOxU": "Teneffüs Visual Identity Design - This is a fun, music and children themed work based on Teneffüs Visual Identity Desig. In this template we designed for education and school, colors, music, and readable and aesthetically compatible fonts that reflect the character of the brand are used throughout the video. The typography created language that clearly conveyed the message of the video and matched the visual identity of the brand.",
+                    "1BDXUWn3MFc": "Berkeley Law Corporate Film",
+                    "HBwFegPBfK4": "Flat Transitions - After Effects Template - Contains a collection of minimalist colorful scenes. You can change the colors of this template, which you can use in any field, according to your needs. Amaze your audience with these complementary and fluid transitions.",
+                    "mfITzT8OD-U": "Festival Photo Slideshow - After Effects Template - A unique activity and celebration display, this slideshow is a great introduction or opening for your celebrations, event promotions and event videos, or showcase your special occasions, memories, friends and family photos. Impress your audience with this eye-catching and professional animated slideshow.",
+                    "pJXidpkwkvM": "Fashion Freeze Frame - After Effects Template - This template is a modern template with fashion content. The project contains many text animations. The template is the trending choice for advertising in fashion, style, trend, slideshows, promotions and video events. It contains 9 media 19 text placeholders.",
+                    "NSW-dfCgcDM": "Wedding Photo Slideshow - After Effects Template - Wedding Moments Slideshow is an instant looking and simple animated template with elegantly animated slow-motion photo frames that showcase your media in style. This template includes 15 text placeholders and 43 media placeholders. You can use it to showcase your wedding day, anniversary, romantic moments, special days, memories, friends and family photos. Cherish your memories with this emotional and elegant animated template.",
+                    "W0Veg1ER2II": "Youtube Freeze Frame - After Effects Template - It's a great way to showcase your photos and videos with professional animations. It is also the best choice to display your advertisements, apparel and promotions. The most suitable design for identifying characters in complex and crowded videos. This product is a great tool for youtubers, vloggers and travelers.",
+                    "K8sCEU4xtIo": "Party Instagram Reels - After Effects Template - This fun and inviting template with animated party design will help you promote your venues and invitations in the best way possible on social media. Crown your party world invitation with this unique template.",
+                    "d1x3vNJDKlg": "Icon Transitions - After Effects Template - It adds fluency to your projects with its fun expressions. It is designed to provide a smooth, fun and trendy transition effect. It offers a fun aesthetic to your design with its iconic movements. It strengthens the visual experience by providing transitions between scenes. It will help promote the social media page and other promotions.",
+                    "DG6wniFXhA0": "Promotion Backgrounds - After Effects Template - This dynamic, animated product adds a striking aesthetic to your design with vibrant colors and dynamic patterns. The shapes achieved a striking appearance by reflecting the important elements of the concept.",
+                    "ZgsrnsOLy1A": "Noddle Instagram Reels - After Effects Template - Noddle Instagram Reels - After Effects Template: This template is a template where you can showcase your delicious noodle ads and traditional dishes. This template is the best decision to promote your noodle promotions in your menu.",
+                    "QqY06MuEmJU": "Sandwich Tiktok Stories - After Effects Template - This template, which is the greatest tool for promoting your easy snack menus on social media, includes promotions, snacks and ready-made foods. Try this easy-to-use template now!",
+                    "NERNiheQtEk": "Vakıa TV Show Opener - An opening video, such as Vakıa TV Show Opener, is a visualized story to describe the work done by the charity organization that the channel requests from us, using graphic design elements appropriate to the type and content of the program used. We prepared the Vakıa TV Show Opener animation for this TV program where the acts of kindness and charity are highlighted.",
+                    "OASTVv49UBU": "Göz Aydınlığı TV Show Opener - The design of Göz Aydınlığı TV Show Opener is strengthened with peaceful, serene and healthy colors in accordance with the collage method and concept used. It is designed as the promotional credits of TV programs such as baby, child, health and maternal health, with visuals, music and transitions suitable for the concept.",
+                    "zIRfbXA3xBA": "İlim Dersleri TV Show Opener - İlim Dersleri TV Show Opener, transitions are designed using materials appropriate to the concept and balanced vectors. It is designed for educational purposes, with its antique appearance and colors used, and the use of contrast and line transitions appropriate to the subject of the design.",
+                    "59MyvajWnyE": "Selam Olsun TV Show Opener - Selam Olsun TV Show Opener has calm and balanced transitions and immersive line transitions designed with rose vectors designed with suitable materials. This intro animation, designed to convey the atmosphere of the characters in the program, was presented as a peaceful and informative animation.",
+                    "5FTQCKFwVgE": "Gradient Backgrounds - After Effects Template - Our backgrounds consisting of neon colors add depth and dynamism to your design with color transitions and wave patterns. The colors were inspired by qualified samples that would reflect the essence of the concept. Try this galaxy-looking background that you can use in any area with bubble, abstract, circle and fluid movements.",
+                    "aucoHAozQYw": "Slideshow Pack Pro - After Effects Template - 1500 Animated scenes, 60+ Unique concepts, 50+ Ready to render templates, 3 hours 22 minutes total duration, 4 duration versions for all templates, 1920×1080 Full HD Resolution, Super easy to use, One-click workflow, Thousands of possibilities, Changeable duration, Fast render optimisation, Online scene catalog, Online template catalog, Fast support, Free lifetime updates, After Effects CC or above, No plugins required, Fonts and music links included, Tutorial video included. What is included in the project? Slideshow Pack Pro After Effects project files, Online catalog for scene types, Online catalog for templates, Video tutorial, Font links, Music links"
+                };
+
+                // Video tıklama olayı
+                projectImage.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const popup = document.querySelector('.video-popup');
+                    const popupContainer = popup.querySelector('.popup-video-container');
+                    const popupThumbnail = popup.querySelector('.popup-thumbnail img');
+                    const popupTitle = popup.querySelector('.popup-title');
+                    const popupDescription = popup.querySelector('.popup-description');
+                    
+                    const popupIframe = document.createElement('iframe');
+                    popupIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1`;
+                    popupIframe.allow = "autoplay; fullscreen";
+                    popupIframe.style.width = '100%';
+                    popupIframe.style.height = '100%';
+                    popupIframe.style.border = 'none';
+                    
+                    // Thumbnail, başlık ve açıklama ayarla
+                    popupThumbnail.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                    const titleElement = this.closest('.project-item').querySelector('.project-title span');
+                    popupTitle.textContent = titleElement.textContent;
+                    popupDescription.textContent = videoDescriptions[videoId] || '';
+                    
+                    popupContainer.innerHTML = '';
+                    popupContainer.appendChild(popupIframe);
+                    popup.style.display = 'flex';
+                    
+                    requestAnimationFrame(() => {
+                        popup.classList.add('active');
+                    });
+                    
+                    document.body.style.overflow = 'hidden';
+                });
             });
         };
-        
+
         // Popup kapatma
         document.querySelector('.close-popup').addEventListener('click', function() {
             const popup = document.querySelector('.video-popup');
@@ -577,6 +533,33 @@
                 document.querySelector('.close-popup').click();
             }
         });
+
+        // YouTube API callback fonksiyonunu güncelleyin
+        function onPlayerReady(event) {
+            event.target.mute();
+            
+            // UI elementlerini periyodik olarak temizle
+            const cleanupInterval = setInterval(() => {
+                const elements = document.querySelectorAll([
+                    '.ytp-watermark', 
+                    '.ytp-chrome-top',
+                    '.ytp-branding-link',
+                    '.ytp-share-button'
+                ].join(','));
+                
+                elements.forEach(el => {
+                    el.style.display = 'none';
+                    el.remove();
+                });
+            }, 100); // Her 100ms'de bir kontrol
+
+            // Player destroy olduğunda interval'i temizle
+            event.target.addEventListener('onStateChange', (state) => {
+                if(state.data === YT.PlayerState.ENDED) {
+                    clearInterval(cleanupInterval);
+                }
+            });
+        }
     </script>
 </body>
 </html> 

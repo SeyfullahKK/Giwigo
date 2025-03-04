@@ -593,6 +593,7 @@ html {
 
 /* Video Popup Stili */
 .video-popup {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -614,74 +615,67 @@ html {
 .popup-content {
     position: relative;
     width: 90%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-.popup-flex-container {
     display: flex;
-    gap: 30px;
+    flex-direction: row;
+    gap: 20px;
 }
 
-.popup-info {
-    width: 300px;
-    padding: 20px 0;
+.popup-video-container {
+    width: 70%;
+    aspect-ratio: 16/9;
+    background: transparent;
+}
+
+.popup-info-container {
+    width: 30%;
     color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .popup-thumbnail {
     width: 100%;
-    margin-bottom: 20px;
-    border-radius: 5px;
+    aspect-ratio: 16/9;
     overflow: hidden;
+    margin-bottom: 15px;
 }
 
-.popup-thumb-img {
+.popup-thumbnail img {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 5px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .popup-title {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
 .popup-description {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
     color: var(--secondary-color);
-    max-height: 200px;
+    line-height: 1.5;
+    max-height: 300px;
     overflow-y: auto;
     padding-right: 10px;
-    white-space: pre-line;
 }
 
-/* Scrollbar stilleri */
 .popup-description::-webkit-scrollbar {
     width: 5px;
 }
 
 .popup-description::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .popup-description::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-}
-
-.popup-description::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-.popup-video-container {
-    flex: 1;
-    aspect-ratio: 16/9;
-    background: transparent;
+    border-radius: 5px;
 }
 
 .popup-video-container iframe {
@@ -713,33 +707,23 @@ html {
     transform: rotate(90deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .popup-content {
+        flex-direction: column;
         width: 95%;
+    }
+    
+    .popup-video-container {
+        width: 100%;
+    }
+    
+    .popup-info-container {
+        width: 100%;
     }
     
     .close-popup {
         right: 0;
         top: -50px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .popup-flex-container {
-        flex-direction: column;
-    }
-    
-    .popup-info {
-        width: 100%;
-        order: 2;
-    }
-    
-    .popup-video-container {
-        order: 1;
-    }
-    
-    .popup-thumbnail {
-        display: none;
     }
 }
 
