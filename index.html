@@ -278,9 +278,6 @@
                 <button class="close-popup">&times;</button>
                 <div class="popup-video-container"></div>
                 <div class="popup-info-container">
-                    <div class="popup-thumbnail">
-                        <img src="" alt="Video Thumbnail">
-                    </div>
                     <h3 class="popup-title"></h3>
                     <div class="popup-description"></div>
                 </div>
@@ -478,7 +475,6 @@
                     
                     const popup = document.querySelector('.video-popup');
                     const popupContainer = popup.querySelector('.popup-video-container');
-                    const popupThumbnail = popup.querySelector('.popup-thumbnail img');
                     const popupTitle = popup.querySelector('.popup-title');
                     const popupDescription = popup.querySelector('.popup-description');
                     
@@ -489,8 +485,7 @@
                     popupIframe.style.height = '100%';
                     popupIframe.style.border = 'none';
                     
-                    // Thumbnail, başlık ve açıklama ayarla
-                    popupThumbnail.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                    // Başlık ve açıklama ayarla
                     const titleElement = this.closest('.project-item').querySelector('.project-title span');
                     popupTitle.textContent = titleElement.textContent;
                     popupDescription.textContent = videoDescriptions[videoId] || '';
