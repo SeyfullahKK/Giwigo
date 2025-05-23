@@ -273,8 +273,6 @@ p, .label, .nav-right a, .contact-link {
 }
 
 .project-item:hover .project-image {
-    outline: 6px solid #888888;
-    outline-offset: 3px;
     background-color: #1a1a1a;
 }
 
