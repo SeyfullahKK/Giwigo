@@ -1,84 +1,140 @@
-body {
+body,
+html {
     margin: 0;
     padding: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-.container {
-    text-align: center;
-    position: relative;
-    max-width: 1200px;
     width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
-.bg-image {
-    position: fixed;
+/* Background Image Setting */
+body {
+    background: url('giwigo_web_image.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Center Content */
+.center-content {
+    position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.6;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    z-index: 1;
+    text-align: center;
+    width: 100%;
 }
 
 .logo {
-    max-width: 300px;
-    width: 100%;
+    max-width: 400px;
+    /* Adjust size as needed */
+    width: 80%;
     height: auto;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+    margin-bottom: 0px;
+    /* Slogan is close to logo */
+}
+
+.slogan {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Bottom Left Content */
+.bottom-left-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    text-align: left;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    gap: 5px;
+    margin-bottom: 15px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #fff;
+.contact-link {
+    color: white;
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
     transition: opacity 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.contact-item:hover {
+.contact-link:hover {
     opacity: 0.8;
 }
 
-.contact-item i {
-    font-size: 1.4rem;
+.social-icons {
+    display: flex;
+    gap: 15px;
 }
 
-.main-visual {
-    max-width: 800px;
-    width: 90%;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.social-icon {
+    color: white;
+    font-size: 1.1rem;
+    /* Smaller icons */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Subtle background for icons */
+    backdrop-filter: blur(2px);
+}
+
+.social-icon:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .center-content {
+        left: 50%;
+    }
+
+    .logo {
+        max-width: 250px;
+    }
+
+    .slogan {
+        font-size: 1rem;
+    }
+
+    .bottom-left-content {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 80px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .contact-link {
+        font-size: 0.8rem;
+    }
 }
